@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI and Pedigree Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      width: 30%;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .form-group select {
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .form-group button {
+      width: 100%;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .result span {
+      color: #4CAF50;
+    }
+
+    /* Add a flex display to the main container */
+    .main {
+      display: flex;
+    }
+
+    /* Add a flex direction of column to the sub containers */
+    .sub {
+      flex-direction: column;
+    }
+
+    /* Add some margin and width to the sub containers */
+    .sub-1 {
+      margin-right: 10px;
+      width: 50%;
+    }
+
+    .sub-2 {
+      margin-left: 10px;
+      width: 50%;
+    }
+  </style>
+</head>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard - Cure-It</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="min-h-full">
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <a href="/">
+                                <img class="h-24 w-20" src="./public/logo.png" alt="Your Company">
+                            </a>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="/dashboard"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Dashboard</a>
+                                <a href="/basic_checkup"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Basic
+                                    Checkup</a>
+                                <a href="heart_diagnosis"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Heart
+                                    Diagnosis</a>
+                                <a href="/diabetes_diagnosis"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Diabetes
+                                    Diagnosis</a>
+                                <a href="/calculator"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calculator
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center gap-2 md:ml-6">
+                            <h1 class="text-white">Welcome</h1>
+
+                            <a href="/logout"
+                                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">View notifications</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="bg-white shadow">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+            </div>
+        </header>
+        <main class="bg-gray-100">
+            <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                <!-- Your content -->
+
+
+
+  <div class="container main">
+    <h1></h1>
+    <!-- Add a sub container for the BMI form -->
+    
+    <div class="container sub sub-1">
+      <form id="bmiForm" action="/bmi" method="post">
+        <div class="form-group">
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" name="weight" placeholder="Enter weight in kg" required>
+        </div>
+        <div class="form-group">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" name="height" placeholder="Enter height in cm" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="submit">Calculate BMI</button>
+        </div>
+      </form>
+      <div class="result" id="result"></div>
+      
+        <h1 class="text-3xl font-bold">{{bmi}}  {{category_bmi}}</h1>
+    
+    </div>
+    <!-- Add another sub container for the pedigree form -->
+    <div class="container sub sub-2">
+      <form action="/calculate_dpf" method="post">
+        <div class="form-group">
+          <label for="parent_diabetes">Parent with Diabetes:</label>
+          <select id="parent_diabetes" name="parent_diabetes">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sibling_diabetes">Sibling with Diabetes:</label>
+          <select id="sibling_diabetes" name="sibling_diabetes">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="age_onset_relative">Age of Onset in Relative:</label>
+          <input type="number" id="age_onset_relative" name="age_onset_relative">
+        </div>
+        <div class="form-group">
+          <label for="num_relatives_with_diabetes">Number of Relatives with Diabetes:</label>
+          <input type="number" id="num_relatives_with_diabetes" name="num_relatives_with_diabetes">
+        </div>
+        <div class="form-group">
+          <button type="submit" id="submit">Calculate Pedigree Score</button>
+        </div>
+      </form>
+      
+      <div class="result" id="result"></div>
+      <h1 class="text-3xl font-bold">{{ dpf_score }}</h1>
+     
+    </div>
+  </div>

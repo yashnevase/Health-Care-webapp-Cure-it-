@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heart Diagnosis - Cure-It</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="min-h-full">
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <a href="/">
+                                <img class="h-24 w-20" src="./public/logo.png" alt="Your Company">
+                            </a>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="/dashboard"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Dashboard</a>
+                                <a href="/basic_checkup"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Basic
+                                    Checkup</a>
+                                <a href="heart_diagnosis"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Heart
+                                    Diagnosis</a>
+                                <a href="/diabetes_diagnosis"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Diabetes
+                                    Diagnosis</a>
+                                <a href="/calculator"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calculator
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center gap-2 md:ml-6">
+                            <h1 class="text-white">Welcome, {{ user.name }}</h1>
+
+                            <a href="/logout"
+                                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">View notifications</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="bg-white shadow">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Heart Diagnosis</h1>
+            </div>
+        </header>
+        <main class="bg-gray-100">
+            <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                <form action="/heart_diagnosis" method="POST" enctype="multiport/form-data">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="age" class="block font-semibold leading-6 text-gray-900">Age : </label>
+                            <div class="mt-2">
+                                <input type="text" name="age" id="age"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="sex" class="block font-semibold leading-6 text-gray-900">Gender : </label>
+                            <div class="mt-2">
+                                <input type="text" name="sex" id="sex" placeholder="(1:Male,0:Female)"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="chest" class="block font-semibold leading-6 text-gray-900">Chest Pain Type :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="chest" id="chest" placeholder="(1 = typical angina, 2 = atypical angina, 3 = non-anginal pain, 4 = asymptomatic)"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="trestbps" class="block font-semibold leading-6 text-gray-900">Resting Blood Pressure :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="trestbps" id="trestbps" placeholder="Resting Blood Pressure in mm Hg"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="chol" class="block font-semibold leading-6 text-gray-900">Cholesterol Level :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="chol" id="chol" placeholder="Cholesterol Level in mg/dl"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="fbs"
+                                class="block font-semibold leading-6 text-gray-900">Fasting Blood Sugar Level :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="fbs" id="fbs" placeholder="Fasting Blood Sugar Level (> 120 mg/dl, 1 = true; 0 = false)"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="restecg"
+                                class="block font-semibold leading-6 text-gray-900">Resting Electrocardiograph Results :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="restecg" id="restecg" placeholder="(0 = normal, 1 = having ST-T wave abnormality, 2 = showing probable or definite left ventricular hypertrophy)"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="thalach" class="block font-semibold leading-6 text-gray-900">Maximum Heart Rate Achieved :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="thalach" id="thalach" placeholder="Maximum Heart Rate Achieved"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="exang" class="block font-semibold leading-6 text-gray-900">Exercise Induced Angina :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="exang" id="exang" placeholder="Exercise Induced Angina (1 = yes; 0 = no)"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="oldpeak"
+                                class="block font-semibold leading-6 text-gray-900">ST Depression Induced by Exercise Relative to Rest :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="oldpeak" id="oldpeak" placeholder="ST Depression Induced by Exercise Relative to Rest"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="slope"
+                                class="block font-semibold leading-6 text-gray-900">Slope of the Peak Exercise ST Segment :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="slope" id="slope" placeholder="Slope of the Peak Exercise ST Segment (1 = upsloping, 2 = flat, 3 = downsloping)"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="ca"
+                                class="block font-semibold leading-6 text-gray-900">Number of Major Vessels Colored by Fluoroscopy :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="ca" id="ca" placeholder="Number of Major Vessels Colored by Fluoroscopy (0-3)"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="thal"
+                                class="block font-semibold leading-6 text-gray-900">Thalium Stress Test Result :
+                            </label>
+                            <div class="mt-2">
+                                <input type="text" name="thal" id="thal" placeholder="Thalium Stress Test Result (3 = normal; 6 = fixed defect; 7 = reversable defect)"
+                                    class="block w-full rounded-md border-0 py-1.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-end">
+                        <input class="bg-indigo-500 text-white py-2 px-4 rounded-md" type="submit" value="Predict" />
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

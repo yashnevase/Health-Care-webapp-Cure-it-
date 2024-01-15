@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diabetes Diagnosis - Cure-It</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="min-h-full">
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <a href="/">
+                                <img class="h-24 w-20" src="./public/logo.png" alt="Your Company">
+                            </a>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="/dashboard"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Dashboard</a>
+                                <a href="/basic_checkup"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Basic
+                                    Checkup</a>
+                                <a href="heart_diagnosis"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Heart
+                                    Diagnosis</a>
+                                <a href="/diabetes_diagnosis"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Diabetes
+                                    Diagnosis</a>
+                                <a href="/calculator"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calculator
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center gap-2 md:ml-6">
+                            <h1 class="text-white">Welcome, {{ user.name }}</h1>
+
+                            <a href="/logout"
+                                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">View notifications</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="bg-white shadow">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Diabetes Diagnosis</h1>
+            </div>
+        </header>
+        <main class="bg-gray-100">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:p-6 lg:px-8">
+                <form action="/diabetes_result" method="POST" class="bg-white p-6 shadow-md rounded-md">
+                    <h1 class="py-4 text-3xl font-bold">Please enter the patient details</h1>
+    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="pregnancies" class="block font-semibold leading-6 text-gray-900">Number of
+                                Pregnancies</label>
+                            <div class="mt-2">
+                                <input type="number" name="pregnancies" id="pregnancies" placeholder="eg. 0 for male"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+    
+                        <div>
+                            <label for="glucose" class="block font-semibold leading-6 text-gray-900">Glucose Level
+                                (mg/dL)</label>
+                            <div class="mt-2">
+                                <input type="number" name="glucose" id="glucose" placeholder="eg. 80"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+    
+                        <div>
+                            <label for="bloodpressure" class="block font-semibold leading-6 text-gray-900">Blood Pressure
+                                (mmHg)</label>
+                            <div class="mt-2">
+                                <input type="number" name="bloodpressure" id="bloodpressure" placeholder="eg. 80"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+    
+                        <div>
+                            <label for="skinthickness" class="block font-semibold leading-6 text-gray-900">Skin Thickness
+                                (mm)</label>
+                            <div class="mt-2">
+                                <input type="number" name="skinthickness" id="skinthickness" placeholder="eg. 20"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+    
+                        <div>
+                            <label for="insulin" class="block font-semibold leading-6 text-gray-900">Insulin Level
+                                (IU/mL)</label>
+                            <div class="mt-2">
+                                <input type="number" name="insulin" id="insulin" placeholder="eg. 80"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+    
+                        <div>
+                            <label for="bmi" class="block font-semibold leading-6 text-gray-900">Body Mass Index
+                                (kg/m²)</label>
+                            <div class="mt-2">
+                                <input type="number" name="bmi" id="bmi" placeholder="eg. 23.1"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+    
+                        <div>
+                            <label for="dpf" class="block font-semibold leading-6 text-gray-900">Diabetes Pedigree
+                                Function</label>
+                            <div class="mt-2">
+                                <input type="number" name="dpf" id="dpf" placeholder="eg. 0.52"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+    
+                        <div>
+                            <label for="age" class="block font-semibold leading-6 text-gray-900">Patient Age in
+                                Years</label>
+                            <div class="mt-2">
+                                <input type="number" name="age" id="age" placeholder="eg. 34"
+                                    class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="mt-4 flex justify-end">
+                        <input type="submit" value="Predict" class="bg-indigo-500 text-white py-2 px-4 rounded-md">
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
