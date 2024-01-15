@@ -5,6 +5,16 @@ Cure-It is a disease prediction web application that allows users to input their
 Cure-It is a web application built with Flask that allows users to get predictions on various diseases based on their symptoms and health data.
 
 # Overview
+Images:
+![index](https://github.com/yashnevase/Health-Care-webapp-Cure-it-/assets/78201930/84187523-c7f5-4d46-9cc6-bb5fad792efe)
+![reg](https://github.com/yashnevase/Health-Care-webapp-Cure-it-/assets/78201930/16b0fcd9-985e-42d6-9703-b6250b307ed0)
+![dash](https://github.com/yashnevase/Health-Care-webapp-Cure-it-/assets/78201930/a2284900-9c40-4f04-ad73-1f1fdf911ae3)
+![bassic](https://github.com/yashnevase/Health-Care-webapp-Cure-it-/assets/78201930/09eb114d-e256-451c-bd83-2e4b0f779132)
+![heart](https://github.com/yashnevase/Health-Care-webapp-Cure-it-/assets/78201930/05b7743f-c8f2-4261-b600-60569c7c3b02)
+![diabetes](https://github.com/yashnevase/Health-Care-webapp-Cure-it-/assets/78201930/d46401c1-70b6-4f80-bd02-258cf213dd67)
+![cal](https://github.com/yashnevase/Health-Care-webapp-Cure-it-/assets/78201930/c8753029-07ae-480e-b8b8-3900cd10d0af)
+
+
 The app provides disease predictions in 3 main areas:
 
 General Disease Prediction
