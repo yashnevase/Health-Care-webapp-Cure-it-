@@ -24,7 +24,7 @@ Users can create an account and then input their symptoms or details like blood 
 
 # Installation
 Clone the repository and install dependencies:
-git clone https://github.com/<your_repo>
+git clone [https://github.com/<your_repo>](https://github.com/yashnevase/Health-Care-webapp-Cure-it-)
 cd cure-it
 pip install -r requirements.txt
 
